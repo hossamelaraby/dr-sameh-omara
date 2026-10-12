@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FCFDFC;
+    color: #425466;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom safe area padding for modern smartphones with bottom navigation home bar */
+.pb-safe {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5.5rem);
+}
+
+.bottom-safe {
+  bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Subtle background grid pattern for high-end clinical aesthetic */
+.medical-pattern {
+  background-color: #FCFDFC;
+  background-image: radial-gradient(#168C8C 0.65px, transparent 0.65px), radial-gradient(#123047 0.65px, #FCFDFC 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  opacity: 0.98;
+}
+
+/* Glass effect */
+.glass-nav {
+  background: rgba(252, 253, 252, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Button pulse animations */
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(22, 140, 140, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(22, 140, 140, 0);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite;
+}
+
+/* Ensure telephone and coordinates read left-to-right clearly */
+.dir-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
